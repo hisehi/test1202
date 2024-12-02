@@ -12,7 +12,7 @@
     #canvas1 {
         position: absolute;
         /* border: 1px solid black; */
-        background-color: skyblue;
+        background-color: rgb(14, 14, 14);
         top: 0;
         left: 0;
         width: 100%;
@@ -35,7 +35,7 @@
 
         function drawFlower() {
 
-            let angle = number * 0.1;
+            let angle = number * 20;
             let radius = scale * Math.sqrt(number);
             let positionX = radius * Math.cos(angle) + canvas.width/2;
             let positionY = radius * Math.sin(angle) + canvas.height/2;
@@ -43,7 +43,7 @@
             ctx.fillStyle = '#f0a07b';
             // ctx.strokeStyle = '#4a274f';
             ctx.strokeStyle = 'hsla('+hue+', 50%, 50%, 1)';
-            ctx.lineWidth = 0.2;
+            ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.arc(positionX, positionY, size, size, 0, Math.PI * 2);
             ctx.closePath();
@@ -51,7 +51,7 @@
             ctx.stroke();
             size += 0.5;
             number += 1;
-            hue += 0.1;
+            hue += 0.5;
         }
 
         function animate() {
